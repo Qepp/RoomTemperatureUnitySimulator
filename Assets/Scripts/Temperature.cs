@@ -46,4 +46,9 @@ public class Temperature : MonoBehaviour
         double power = volume * tempDiff * ach * 0.33;
         temperature -= (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * mass);
     }
+
+    public void HeatByWatts(float power)
+    {
+        temperature += (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * mass);
+    }
 }
