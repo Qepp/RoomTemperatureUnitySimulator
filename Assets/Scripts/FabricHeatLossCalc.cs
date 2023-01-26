@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VentilationAC : MonoBehaviour
+public class FabricHeatLossCalc : MonoBehaviour
 {
-    public Temperature temperature, outsideTemp;
+    public Temperature temperature;
     [SerializeField]
-    private float length, width, height, wallRvalue;
-    [SerializeField]
-    private float uValue;
-    [SerializeField]
-    private float ach; // air changes per hour
+    private float length, width, height;
+
     public List<Wall> walls = new List<Wall>();
 
     [SerializeField]
@@ -44,18 +41,25 @@ public class VentilationAC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tempDiff = temperature.temperature - outsideTemp.temperature;
-        Ventilation();
+        foreach (Wall wall in walls)
+        {
+            
+            FabricHeatLoss(wall);
+        }
+
+ 
     }
 
-
-
-    private void Ventilation()
+    private void FabricHeatLoss(Wall wall)
     {
-        float volume = length * width * height;
-        double power = volume * tempDiff * ach * 0.33;
+        var outTemp = wall.otherSide.GetComponent<Temperature>();
+        tempDiff = temperature.temperature - outTemp.temperature;
+        double power = wall.surfaceArea * wall.uValue * tempDiff / 1000;
+        Debug.Log(power);
         temperature.temperature -= (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * mass);
     }
+
+
 
 
 }

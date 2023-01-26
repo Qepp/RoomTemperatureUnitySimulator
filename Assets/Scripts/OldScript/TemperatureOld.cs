@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Temperature : MonoBehaviour
+public class TemperatureOld : MonoBehaviour
 {
-    public Temperature ventiOtherSide;
-    public double temperature;
+    public double temperature, outsideTemp;
     [SerializeField]
-    private float length, width, height;
+    private float length, width, height, wallRvalue;
     [SerializeField]
     private float uValue;
     [SerializeField]
     private float ach; // air changes per hour
+    public List<Wall> walls = new List<Wall>();
+
+    [SerializeField]
+    private double temp;
+
     private double mass, surfaceArea;
     private float shc = 1010; //specific heat capacity J/(K*kg)
     private double tempDiff;
@@ -40,9 +44,9 @@ public class Temperature : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //tempDiff = temperature - ventiOtherSide.temperature;
-        //FabricHeatLoss();
-        //Ventilation();
+        tempDiff = temperature - outsideTemp;
+        FabricHeatLoss();
+        Ventilation();
     }
 
     private void FabricHeatLoss()
@@ -61,6 +65,6 @@ public class Temperature : MonoBehaviour
     public void HeatByWatts(float power)
     {
         Variables.Instance.WattsSpend(power);
-        //temperature += (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * mass);
+        temperature += (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * mass);
     }
 }

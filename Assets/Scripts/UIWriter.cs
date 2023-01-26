@@ -6,6 +6,7 @@ using UnityEngine;
 public class UIWriter : MonoBehaviour
 {
     public Temperature writtenTemperature;
+    public Temperature outsideTemperature;
     [SerializeField]
     private TextMeshProUGUI outsideTempText;
     [SerializeField]
@@ -24,7 +25,7 @@ public class UIWriter : MonoBehaviour
 
     private void WriteTempUiCanvas()
     {
-        outsideTempText.text = writtenTemperature.outsideTemp.ToString("F2") + "°C";
+        outsideTempText.text = outsideTemperature.temperature.ToString("F2") + "°C";
         insideTempText.text = writtenTemperature.temperature.ToString("F3") + "°C";
     }
 

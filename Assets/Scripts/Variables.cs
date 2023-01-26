@@ -6,6 +6,7 @@ public class Variables : MonoBehaviour
 {
     public static Variables Instance { get; private set; }
     public float timeScale;
+    public double totalWattageUsed = 0;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -16,5 +17,10 @@ public class Variables : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    public void WattsSpend(double watts)
+    {
+        totalWattageUsed += System.Math.Abs(watts) * timeScale;
     }
 }
