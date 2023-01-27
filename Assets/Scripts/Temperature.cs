@@ -6,13 +6,12 @@ public class Temperature : MonoBehaviour
 {
     public Temperature ventiOtherSide;
     public double temperature;
-    [SerializeField]
-    private float length, width, height;
+    public float length, width, height;
     [SerializeField]
     private float uValue;
     [SerializeField]
     private float ach; // air changes per hour
-    private double mass, surfaceArea;
+    public double mass, surfaceArea;
     private float shc = 1010; //specific heat capacity J/(K*kg)
     private double tempDiff;
     
@@ -61,6 +60,6 @@ public class Temperature : MonoBehaviour
     public void HeatByWatts(float power)
     {
         Variables.Instance.WattsSpend(power);
-        //temperature += (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * mass);
+        temperature += (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * mass);
     }
 }

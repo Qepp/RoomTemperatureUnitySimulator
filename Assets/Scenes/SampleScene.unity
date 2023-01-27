@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbea939b8d3669041b369664bb39c5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeScale: 1
+  timeScale: 10
   totalWattageUsed: 0
 --- !u!4 &412787227
 Transform:
@@ -1097,6 +1097,8 @@ MonoBehaviour:
   height: 0
   uValue: 0
   ach: 0
+  mass: 0
+  surfaceArea: 0
 --- !u!4 &1526944003
 Transform:
   m_ObjectHideFlags: 0
@@ -1214,7 +1216,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   airTemp: {fileID: 1856639382}
-  temperature: 21
   maxPower: 80
   power: 0
   warmUpTime: 1800
@@ -1590,12 +1591,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ventiOtherSide: {fileID: 1526944002}
-  temperature: 10
+  temperature: 18
   length: 3
   width: 3
   height: 3
   uValue: 0.24
   ach: 0.5
+  mass: 0
+  surfaceArea: 0
 --- !u!4 &1856639383
 Transform:
   m_ObjectHideFlags: 0
@@ -1618,21 +1621,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856639379}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99cf6e2292999d34592ed8b7d3548d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 1856639382}
-  outsideTemp: {fileID: 0}
-  length: 0
-  width: 0
-  height: 0
-  wallRvalue: 0
-  uValue: 0
+  outsideTemp: {fileID: 1526944002}
   ach: 0
-  walls: []
-  temp: 0
 --- !u!114 &1856639385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1640,15 +1636,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856639379}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6e642c123cff2745b5a29431584faec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   temperature: {fileID: 1856639382}
-  length: 3
-  width: 3
-  height: 3
   walls:
   - surfaceArea: 45
     uValue: 0.25

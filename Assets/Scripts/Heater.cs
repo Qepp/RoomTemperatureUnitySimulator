@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Heater : MonoBehaviour
 {
     public Temperature airTemp;
-    public double temperature;
     [Header("Power output in W")]
     public float maxPower;
     [SerializeField]
