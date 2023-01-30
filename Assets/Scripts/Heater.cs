@@ -54,7 +54,7 @@ public class Heater : MonoBehaviour
     {
         
 
-        while (elapsedTime < warmUpTime)
+        while (elapsedTime <= warmUpTime)
         {
             elapsedTime += Time.deltaTime * Variables.Instance.timeScale;
             power = Mathf.Lerp(0, maxPower, elapsedTime / warmUpTime);
@@ -67,7 +67,7 @@ public class Heater : MonoBehaviour
     {
         
 
-        while (elapsedTime > 0)
+        while (elapsedTime >= 0)
         {
             elapsedTime -= Time.deltaTime * Variables.Instance.timeScale;
             power = Mathf.Lerp(0, maxPower, elapsedTime / warmUpTime);

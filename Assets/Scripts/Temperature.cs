@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class Temperature : MonoBehaviour
 {
-    public Temperature ventiOtherSide;
     public double temperature;
     public float length, width, height;
-    [SerializeField]
-    private float uValue;
-    [SerializeField]
-    private float ach; // air changes per hour
     public double mass, surfaceArea;
     private float shc = 1010; //specific heat capacity J/(K*kg)
     private double tempDiff;
@@ -44,18 +39,6 @@ public class Temperature : MonoBehaviour
         //Ventilation();
     }
 
-    private void FabricHeatLoss()
-    {       
-        double power = surfaceArea * uValue * tempDiff / 1000;
-        temperature -= (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * mass);
-    }
-
-    private void Ventilation()
-    {
-        float volume = length * width * height;
-        double power = volume * tempDiff * ach * 0.33;
-        temperature -= (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * mass);
-    }
 
     public void HeatByWatts(float power)
     {

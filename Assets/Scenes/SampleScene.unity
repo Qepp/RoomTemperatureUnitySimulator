@@ -153,8 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbea939b8d3669041b369664bb39c5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeScale: 10
-  totalWattageUsed: 0
+  timeScale: 100
+  EnergyUsedKWh: 0
+  SecondsGone: 0
 --- !u!4 &412787227
 Transform:
   m_ObjectHideFlags: 0
@@ -1090,13 +1091,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b974b8d2e0324caf138bc4464df69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ventiOtherSide: {fileID: 0}
-  temperature: 0
+  temperature: -10
   length: 0
   width: 0
   height: 0
-  uValue: 0
-  ach: 0
   mass: 0
   surfaceArea: 0
 --- !u!4 &1526944003
@@ -1216,9 +1214,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   airTemp: {fileID: 1856639382}
-  maxPower: 80
+  maxPower: 800
   power: 0
-  warmUpTime: 1800
+  warmUpTime: 60
   onLight: {fileID: 1648637979}
   elapsedTime: 0
 --- !u!65 &1555211688
@@ -1590,13 +1588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b974b8d2e0324caf138bc4464df69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ventiOtherSide: {fileID: 1526944002}
   temperature: 18
-  length: 3
-  width: 3
-  height: 3
-  uValue: 0.24
-  ach: 0.5
+  length: 5
+  width: 5
+  height: 2
   mass: 0
   surfaceArea: 0
 --- !u!4 &1856639383
@@ -1628,7 +1623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   temperature: {fileID: 1856639382}
   outsideTemp: {fileID: 1526944002}
-  ach: 0
+  ach: 1
 --- !u!114 &1856639385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,7 +1638,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   temperature: {fileID: 1856639382}
   walls:
-  - surfaceArea: 45
-    uValue: 0.25
+  - surfaceArea: 38
+    uValue: 0.21
+    otherSide: {fileID: 1526944003}
+  - surfaceArea: 2
+    uValue: 1
+    otherSide: {fileID: 1526944003}
+  - surfaceArea: 10
+    uValue: 1
+    otherSide: {fileID: 1526944003}
+  - surfaceArea: 25
+    uValue: 0.1
     otherSide: {fileID: 1526944003}
   temp: 0
