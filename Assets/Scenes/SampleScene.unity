@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbea939b8d3669041b369664bb39c5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeScale: 100
+  timeScale: 1
   EnergyUsedKWh: 0
   SecondsGone: 0
 --- !u!4 &412787227
@@ -723,9 +723,10 @@ GameObject:
   - component: {fileID: 1096169019}
   - component: {fileID: 1096169018}
   - component: {fileID: 1096169017}
+  - component: {fileID: 1096169022}
   m_Layer: 0
-  m_Name: WallRadiator
-  m_TagString: Untagged
+  m_Name: WallRadiator Adax NEO 800W K 370x704
+  m_TagString: Radiator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -742,8 +743,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f22b32738f5e29479008d7ea88fd7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 0}
-  waterTemp: 0
+  airTemp: {fileID: 0}
+  maxPower: 800
+  power: 0
+  warmUpTime: 1
+  elapsedTime: 0
+  heaterTemp: 20
+  heaterMaxTemp: 87
+  mass: 5
+  shc: 0.46
+  surfaceArea: 0.6
+  htc: 25
 --- !u!65 &1096169018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -822,6 +832,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1096169022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096169016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a376543a52253474ab3460c7854b6675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationObject: {fileID: 834305316}
+  location: {x: 0, y: 0, z: 0}
+  targetTemperature: 20
+  dropDown: 0
+  temperChanger: {fileID: 1096169017}
 --- !u!1 &1324791105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1555211687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1217,7 +1244,6 @@ MonoBehaviour:
   maxPower: 800
   power: 0
   warmUpTime: 60
-  onLight: {fileID: 1648637979}
   elapsedTime: 0
 --- !u!65 &1555211688
 BoxCollider:

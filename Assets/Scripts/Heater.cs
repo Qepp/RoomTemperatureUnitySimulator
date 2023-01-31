@@ -10,13 +10,13 @@ public class Heater : MonoBehaviour
     [Header("Power output in W")]
     public float maxPower;
     [SerializeField]
-    private float power;
+    protected float power;
     [SerializeField]
-    private float warmUpTime;
-    public Image onLight;
-    private bool heaterOn = false;
+    protected float warmUpTime;
+    //public Image onLight;
+    protected bool heaterOn = false;
     [SerializeField]
-    private float elapsedTime = 0;
+    protected float elapsedTime = 0;
     void Start()
     {
         power = 0;
@@ -35,7 +35,7 @@ public class Heater : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(WarmingHeater());
             heaterOn = true;
-            onLight.color = Color.green;
+            //onLight.color = Color.green;
         }
     }
 
@@ -45,7 +45,7 @@ public class Heater : MonoBehaviour
         {
             StopAllCoroutines();
             StartCoroutine(CoolingHeater());
-            onLight.color = Color.red;
+            //onLight.color = Color.red;
             heaterOn = false;
         }
     }

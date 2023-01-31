@@ -40,9 +40,9 @@ public class Temperature : MonoBehaviour
     }
 
 
-    public void HeatByWatts(float power)
+    public void HeatByWatts(double power)
     {
-        Variables.Instance.WattsSpend(power);
+        //Variables.Instance.WattsSpend(power);
         temperature += (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * mass);
     }
 }
