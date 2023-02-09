@@ -75,4 +75,4 @@ crashlytics-build.properties
 /Assets/AmplifyShaderEditor
 /Assets/CubeNumberGenerator
 /Assets/ARDK/Plugins/unity_exports/ardk_client_platform/libs/telemetry_csharp_dll/Niantic.Platform.Analytics/
-/Assets/NotForGit
+/Assets/NotForGit/

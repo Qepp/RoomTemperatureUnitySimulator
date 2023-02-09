@@ -140,6 +140,7 @@ public class mqttReceiverAuthFromFile : M2MqttUnityClient
         base.Start();
         StreamReader reader = new StreamReader("Assets/NotForGit/ServerAuth.txt");
         brokerAddress = reader.ReadLine();
+        brokerPort = int.Parse(reader.ReadLine());
         mqttUserName = reader.ReadLine();
         mqttPassword = reader.ReadLine();
 
