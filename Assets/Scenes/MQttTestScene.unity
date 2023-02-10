@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brokerAddress: localhost
   brokerPort: 1883
-  isEncrypted: 0
+  isEncrypted: 1
   certificateName: 
   connectionDelay: 500
   timeoutOnConnection: 30000

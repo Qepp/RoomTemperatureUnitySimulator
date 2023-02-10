@@ -137,7 +137,6 @@ public class mqttReceiverAuthFromFile : M2MqttUnityClient
 
     protected override void Start()
     {
-        base.Start();
         StreamReader reader = new StreamReader("Assets/NotForGit/ServerAuth.txt");
         brokerAddress = reader.ReadLine();
         brokerPort = int.Parse(reader.ReadLine());
@@ -145,6 +144,8 @@ public class mqttReceiverAuthFromFile : M2MqttUnityClient
         mqttPassword = reader.ReadLine();
 
         reader.Close();
+        base.Start();
+
     }
 
     protected override void DecodeMessage(string topic, byte[] message)
