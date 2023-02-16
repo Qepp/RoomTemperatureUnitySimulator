@@ -179,7 +179,7 @@ MonoBehaviour:
   topicSubscripe: home/#
   topicPublish: home/light1
   messagePublish: 525
-  autoTest: 1
+  autoTest: 0
 --- !u!1 &372077462
 GameObject:
   m_ObjectHideFlags: 0

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 412787227}
   - component: {fileID: 412787226}
   - component: {fileID: 412787228}
+  - component: {fileID: 412787229}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -153,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbea939b8d3669041b369664bb39c5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeScale: 1
+  timeScale: 100
   EnergyUsedKWh: 0
   SecondsGone: 0
 --- !u!4 &412787227
@@ -187,6 +188,27 @@ MonoBehaviour:
   outsideTemperature: {fileID: 1526944002}
   outsideTempText: {fileID: 615133629}
   insideTempText: {fileID: 1595789755}
+--- !u!114 &412787229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412787225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db2071439612df47b56fd0fa95300eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataNames:
+  - Time
+  - Power used
+  - Room temperature
+  - Outside temperature
+  outsideTemp: {fileID: 1526944002}
+  roomTemp: {fileID: 1856639382}
+  timespan: 600
+  dataPoints: []
 --- !u!1 &615133627
 GameObject:
   m_ObjectHideFlags: 0
