@@ -5,6 +5,13 @@ using UnityEngine;
 public class VentilationAC : MonoBehaviour
 {
     public Temperature temperature, outsideTemp;
+    public float heatRecoveryRate;
+
+    public float acPowerUsage;
+
+    public float acPowerEfficiency;
+
+    public bool acOn;
 
     [SerializeField]
     private float ach; // air changes per hour
@@ -32,8 +39,14 @@ public class VentilationAC : MonoBehaviour
 
     private void Ventilation()
     {
+        tempDiff -= tempDiff * heatRecoveryRate;
         float volume = temperature.length * temperature.width * temperature.height;
         double power = volume * tempDiff * ach * 0.33;
+        if (acOn)
+        {
+            power -= acPowerEfficiency * acPowerUsage;
+            Variables.Instance.WattsSpend(acPowerUsage);
+        }
         temperature.temperature -= (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * temperature.mass);
     }
 
