@@ -8,10 +8,6 @@ public class FabricHeatLossCalc : MonoBehaviour
 
     public List<Wall> walls = new List<Wall>();
 
-    [SerializeField]
-    private double temp;
-
-    private double mass;
     private float shc = 1010; //specific heat capacity J/(K*kg)
     private double tempDiff;
 
