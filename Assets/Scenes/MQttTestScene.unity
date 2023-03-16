@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &65589901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 65589903}
+  - component: {fileID: 65589902}
+  m_Layer: 0
+  m_Name: MQTT_Receiver (2)
+  m_TagString: mqttReceiver
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &65589902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65589901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1543c16385a139147b8231130f015b50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokerAddress: localhost
+  brokerPort: 1883
+  isEncrypted: 0
+  certificateName: 
+  connectionDelay: 500
+  timeoutOnConnection: 30000
+  autoConnect: 1
+  mqttUserName: 
+  mqttPassword: 
+  topicSubscripe: home
+  topicPublish: home/light1
+  messagePublish: 799
+  autoTest: 1
+--- !u!4 &65589903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65589901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 615.1554, y: 425.98575, z: -27.81054}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &246788031
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brokerAddress: localhost
   brokerPort: 1883
-  isEncrypted: 1
+  isEncrypted: 0
   certificateName: 
   connectionDelay: 500
   timeoutOnConnection: 30000
@@ -179,7 +236,7 @@ MonoBehaviour:
   topicSubscripe: home/#
   topicPublish: home/light1
   messagePublish: 525
-  autoTest: 0
+  autoTest: 1
 --- !u!1 &372077462
 GameObject:
   m_ObjectHideFlags: 0
