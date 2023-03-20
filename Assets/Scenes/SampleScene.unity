@@ -247,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33365291}
   - component: {fileID: 33365290}
+  - component: {fileID: 33365293}
   - component: {fileID: 33365289}
   - component: {fileID: 33365288}
   - component: {fileID: 33365287}
@@ -458,6 +459,25 @@ ParentConstraint:
     weight: 1
   - sourceTransform: {fileID: 0}
     weight: 1
+--- !u!114 &33365293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33365283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4a786f030dcda48aba2461cc80e47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperature: {fileID: 33365290}
+  outsideTemp: {fileID: 1526944002}
+  heatRecoveryRate: 0
+  acPowerUsage: 0
+  acPowerEfficiency: 0
+  acOn: 0
+  ach: 0
 --- !u!1 &78487880
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 258805282}
   - component: {fileID: 258805281}
+  - component: {fileID: 258805283}
   - component: {fileID: 258805280}
   - component: {fileID: 258805279}
   - component: {fileID: 258805278}
@@ -875,6 +896,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &258805283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258805274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4a786f030dcda48aba2461cc80e47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperature: {fileID: 258805281}
+  outsideTemp: {fileID: 1526944002}
+  heatRecoveryRate: 0
+  acPowerUsage: 0
+  acPowerEfficiency: 0
+  acOn: 0
+  ach: 0
 --- !u!1 &302545426
 GameObject:
   m_ObjectHideFlags: 0
@@ -4731,6 +4771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1856639383}
   - component: {fileID: 1856639382}
+  - component: {fileID: 1856639388}
   - component: {fileID: 1856639384}
   - component: {fileID: 1856639385}
   - component: {fileID: 1856639381}
@@ -4912,6 +4953,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856639379}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1856639388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856639379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4a786f030dcda48aba2461cc80e47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperature: {fileID: 1856639382}
+  outsideTemp: {fileID: 1526944002}
+  heatRecoveryRate: 0
+  acPowerUsage: 0
+  acPowerEfficiency: 0
+  acOn: 0
+  ach: 0
 --- !u!1001 &1989273589
 PrefabInstance:
   m_ObjectHideFlags: 0
