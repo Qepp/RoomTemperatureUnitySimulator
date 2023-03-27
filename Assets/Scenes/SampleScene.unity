@@ -1342,7 +1342,7 @@ MonoBehaviour:
   writtenTemperature1: {fileID: 1856639382}
   outsideTemperature: {fileID: 1526944002}
   outsideTempText: {fileID: 615133629}
-  insideTemp1Text: {fileID: 417004609}
+  insideTemp1Text: {fileID: 1595789755}
   writtenTemperature2: {fileID: 258805281}
   insideTemp2Text: {fileID: 777146184}
   writtenTemperature3: {fileID: 33365290}
