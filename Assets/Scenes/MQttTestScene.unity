@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokerAddress: localhost
-  brokerPort: 1883
+  brokerPort: 0
   isEncrypted: 0
   certificateName: 
   connectionDelay: 500
@@ -233,10 +233,10 @@ MonoBehaviour:
   autoConnect: 1
   mqttUserName: 
   mqttPassword: 
-  topicSubscripe: home/#
-  topicPublish: home/light1
-  messagePublish: 525
-  autoTest: 1
+  topicSubscripe: '#'
+  topicPublish: testi/1
+  messagePublish: 
+  autoTest: 0
 --- !u!1 &372077462
 GameObject:
   m_ObjectHideFlags: 0

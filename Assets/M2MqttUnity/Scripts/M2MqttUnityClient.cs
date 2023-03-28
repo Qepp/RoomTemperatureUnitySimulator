@@ -281,6 +281,7 @@ namespace M2MqttUnity
                     client = new MqttClient(brokerAddress,brokerPort,isEncrypted, isEncrypted ? MqttSslProtocols.TLSv1_2 : MqttSslProtocols.None); //changed from SSL to TLS 1.2 
 #else
                     client = new MqttClient(brokerAddress, brokerPort, isEncrypted, null, null, isEncrypted ? MqttSslProtocols.TLSv1_2 : MqttSslProtocols.None); //changed from SSL to TLS 1.2 
+                    //client = new MqttClient(brokerAddress);
 
                     //Certificates
                         //Version A
