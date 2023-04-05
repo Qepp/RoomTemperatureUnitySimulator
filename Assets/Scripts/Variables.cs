@@ -35,4 +35,8 @@ public class Variables : MonoBehaviour
     {
         SecondsGone += Time.deltaTime * timeScale;
     }
+    public double LerpDouple(double a, double b, double t)
+    {
+        return a + (b - a)*Mathf.Clamp01((float)t);
+    }
 }

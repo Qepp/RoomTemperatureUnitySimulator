@@ -32,9 +32,9 @@ public class WallFBL : MonoBehaviour
     {
         
         var tempDiff = temperature1.temperature - temperature2.temperature;
-        Debug.Log(tempDiff.ToString());
+        //Debug.Log(tempDiff.ToString());
         double power = surfaceArea * uValue * tempDiff / 1000;
-        Debug.Log(power.ToString());
+        //Debug.Log(power.ToString());
         temperature1.temperature -= (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * temperature1.mass);
         temperature2.temperature += (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * temperature2.mass);
     }

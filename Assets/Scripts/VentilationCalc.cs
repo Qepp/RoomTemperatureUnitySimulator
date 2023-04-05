@@ -13,6 +13,8 @@ public class VentilationCalc : MonoBehaviour
 
     public bool acOn;
 
+    public double targetTemp;
+
 
     [SerializeField]
     private float ach; // air changes per hour
@@ -40,8 +42,23 @@ public class VentilationCalc : MonoBehaviour
         double power = volume * tempDiff * ach * 0.33;
         if (acOn)
         {
-            power -= acPowerEfficiency * acPowerUsage;
-            Variables.Instance.WattsSpend(acPowerUsage);
+            if (targetTemp > temperature.temperature)
+            {
+                float eff = (float)(1 - ((outsideTemp.temperature - 25.0+273) / (temperature.temperature + 25.0+273)));
+                Debug.Log(eff + " eff");
+                acPowerEfficiency = (float)(1 / eff);
+                Debug.Log(acPowerEfficiency + " pweff");
+                power -= acPowerEfficiency * acPowerUsage;
+                Debug.Log(power);
+                Variables.Instance.WattsSpend(acPowerUsage);
+            } else
+            {
+                float eff = (float)(1 - ((temperature.temperature - 25.0 + 273) / (outsideTemp.temperature + 25.0 + 273)));
+
+                acPowerEfficiency = (float)(1 / eff);
+                power += acPowerEfficiency * acPowerUsage;
+            }
+
         }
         temperature.temperature -= (power * Time.deltaTime * Variables.Instance.timeScale) / (shc * temperature.mass);
     }

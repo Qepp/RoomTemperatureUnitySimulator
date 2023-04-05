@@ -93,11 +93,11 @@ public class SceneData : MonoBehaviour
         {
             Debug.Log("New Data point added");
             dataPoints.Add(new timedData(variables.SecondsGone, variables.EnergyUsedKWh, roomTemp.temperature, outsideTemp.temperature));
-            timer = 0;
+            timer -= timespan;
             SaveCsvFile();
-        } else
-        {
-            timer += Time.deltaTime * variables.timeScale;
         }
+        
+        timer += Time.deltaTime * variables.timeScale;
+        
     }
 }
