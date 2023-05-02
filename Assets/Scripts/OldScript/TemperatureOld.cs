@@ -6,15 +6,14 @@ public class TemperatureOld : MonoBehaviour
 {
     public double temperature, outsideTemp;
     [SerializeField]
-    private float length, width, height, wallRvalue;
+    private float length, width, height;
     [SerializeField]
     private float uValue;
     [SerializeField]
     private float ach; // air changes per hour
     public List<Wall> walls = new List<Wall>();
 
-    [SerializeField]
-    private double temp;
+
 
     private double mass, surfaceArea;
     private float shc = 1010; //specific heat capacity J/(K*kg)

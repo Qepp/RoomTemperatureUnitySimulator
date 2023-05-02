@@ -15,9 +15,7 @@ public class WallHeater : Heater
     public float surfaceArea;
     [Tooltip("Heat transfer coefficient")]
     public float htc;
-    // Start is called before the first frame update
 
-    // Update is called once per frame
     void Update()
     {
         if (heaterTemp <= heaterMaxTemp)
